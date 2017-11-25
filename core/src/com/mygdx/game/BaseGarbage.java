@@ -1,4 +1,14 @@
 package com.mygdx.game;
 
-public class BaseGarbage {
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.graphics.Texture;
+
+public interface BaseGarbage{
+
+     enum garbageType {
+        GLASS, PAPER, PLASTIC
+    }
+    garbageType returnType();
+    Texture getGarbageTex ();
 }
