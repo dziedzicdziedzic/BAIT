@@ -9,6 +9,4 @@ public interface BaseGarbage{
      enum garbageType {
         GLASS, PAPER, PLASTIC
     }
-    garbageType returnType();
-    Texture getGarbageTex ();
 }
