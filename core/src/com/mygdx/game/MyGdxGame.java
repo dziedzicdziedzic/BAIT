@@ -43,9 +43,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		conveyor_belt.setSize(600,200);
 		conveyor_belt.draw(batch);
 		batch.end();
-		glass.GlassBucketMake();
-		paper.PaperBucketMake();
-		plastic.PlasticBucketMake();
+		glass.render();
+		paper.render();
+		plastic.render();
 		Buckets bucket = new Buckets()
 		{
 			@Override
