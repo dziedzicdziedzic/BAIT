@@ -10,7 +10,11 @@ public class PlasticBucket extends Buckets{
     Texture bucketImg;
 
     public PlasticBucket(){
-        this.create();
+
+    }
+
+    public void PlasticBucketMake()
+    {
         this.render();
     }
 
