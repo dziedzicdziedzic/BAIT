@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class Paper extends Garbage{
 
+
     garbageType paperType = garbageType.PAPER;
     public Texture garbageTex;
 

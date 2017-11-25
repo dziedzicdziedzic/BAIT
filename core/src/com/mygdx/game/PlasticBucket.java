@@ -15,6 +15,15 @@ public class PlasticBucket extends Buckets{
     }
 
     @Override
+    public boolean checkIfValid(ConveyorBelt cnb) {
+        if(cnb.returnPopped().equals(BaseGarbage.garbageType.PLASTIC)){
+            if (this.collision()){
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
     public void create(){
         batch = new SpriteBatch();
         bucketImg = new Texture("core/assets/plastic.png");

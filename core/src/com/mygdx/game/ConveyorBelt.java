@@ -4,15 +4,15 @@ package com.mygdx.game;
 import java.util.Queue;
 
 public class ConveyorBelt {
-    private Queue<BaseGarbage> garbageQueue;
+    private Queue<Garbage> garbageQueue;
 
-    public ConveyorBelt(Queue<BaseGarbage> garbageQueue) {
+    public ConveyorBelt(Queue<Garbage> garbageQueue) {
         this.garbageQueue = garbageQueue;
     }
-    public void setGarbageQueue(Queue<BaseGarbage>  garbageQueue) {
+    public void setGarbageQueue(Queue<Garbage>  garbageQueue) {
         this.garbageQueue = garbageQueue;
     }
-    public BaseGarbage returnPopped(){
-        return garbageQueue.remove();
+    public BaseGarbage.garbageType returnPopped(){
+        return garbageQueue.remove().returnType();
     }
 }

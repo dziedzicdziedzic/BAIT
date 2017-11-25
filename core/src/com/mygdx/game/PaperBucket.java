@@ -9,6 +9,7 @@ public class PaperBucket extends Buckets{
     SpriteBatch batch;
     Texture bucketImg;
 
+
     public PaperBucket(){
         this.create();
         this.render();
@@ -22,6 +23,11 @@ public class PaperBucket extends Buckets{
 
     @Override
     public boolean checkIfValid(ConveyorBelt cnb) {
+        if(cnb.returnPopped().equals(BaseGarbage.garbageType.PAPER)){
+            if (this.collision()){
+                return true;
+            }
+        }
         return false;
     }
 

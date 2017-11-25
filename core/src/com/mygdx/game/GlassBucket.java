@@ -15,8 +15,13 @@ public class GlassBucket extends Buckets {
     }
 
     @Override
-    public boolean checkIfValid() {
-        return true;
+    public boolean checkIfValid(ConveyorBelt cnb) {
+        if(cnb.returnPopped().equals(BaseGarbage.garbageType.GLASS)){
+            if (this.collision()){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
