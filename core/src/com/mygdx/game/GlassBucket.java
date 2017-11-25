@@ -36,7 +36,7 @@ public class GlassBucket extends Buckets {
         batch.draw(bucketImg, 30, 0,160,256);
         batch.end();
     }
-
+    @Override
     public boolean collision(){
         if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
             if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
