@@ -57,7 +57,7 @@ public class Person {
         score+=100;
     }
     public void subscore(){
-        score-=500;
+        score-=1;
         if(score<0){
             score=0;
         }
