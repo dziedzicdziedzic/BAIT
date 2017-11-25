@@ -14,7 +14,7 @@ public class Glass extends Garbage {
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("core/assets/szkło.jpg");
+        garbageTex = new Texture("core/assets/szkło.png");
         return garbageTex;
     }
 

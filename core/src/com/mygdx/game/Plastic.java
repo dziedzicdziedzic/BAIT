@@ -13,7 +13,7 @@ public class Plastic extends Garbage {
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("core/assets/butelka.jpg");
+        garbageTex = new Texture("core/assets/plastik.png");
         return garbageTex;
     }
 

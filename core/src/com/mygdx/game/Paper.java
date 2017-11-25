@@ -15,7 +15,7 @@ public class Paper extends Garbage{
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("core/assets/kulka.png");
+        garbageTex = new Texture("core/assets/papier.png");
         return garbageTex;
     }
 }
