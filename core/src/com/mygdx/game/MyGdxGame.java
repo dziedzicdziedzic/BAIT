@@ -24,7 +24,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		conveyor_belt = new Sprite(new Texture("C:\\Users\\Dziedzic\\Downloads\\test\\core\\assets\\conveyor.png"));
+		conveyor_belt = new Sprite(new Texture("core\\assets\\conveyor.png"));
 		queue = new com.badlogic.gdx.utils.Queue();
 	}
 
@@ -36,8 +36,9 @@ public class MyGdxGame extends ApplicationAdapter {
 			Gdx.gl.glClearColor(255, 255, 255, 1);
 			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 			batch.begin();
+			conveyor_belt.setSize(400,100);
 			conveyor_belt.draw(batch);
-			conveyor_belt.translateX(10);
+			conveyor_belt.translateX(1);
 
 			batch.end();
 	}
