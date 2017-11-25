@@ -1,21 +1,19 @@
 package com.mygdx.game;
 //import java.lang.Object;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.Texture;
 
 public class Person {
 
     private SpriteBatch spriteBatch;
     //private Sprite sprite;
+    private BitmapFont;
     private Texture texture;
     private float timer;
     private int counter;
     private boolean ifhappy;
-    private Texture textures[]=new Texture[11];
+    private Texture textures[]=new Texture[2];
     public void setIfhappy(boolean ifHappy)
     {
         ifhappy=ifHappy;
@@ -27,7 +25,7 @@ public class Person {
         }
         else {
 
-            if (counter > 10) {
+            if (counter > 1) {
                 ifhappy = false;
                 counter = 0;
             } else {
@@ -35,7 +33,7 @@ public class Person {
             }
             timer += Gdx.graphics.getDeltaTime();
 
-            if (timer >= 0.2) {
+            if (timer >= 0.2) {  //czas zmiany animacji
                 timer = 0;
                 this.texture = textures[counter];
                 counter++;
@@ -62,6 +60,7 @@ public class Person {
 
         textures[0]=new Texture("core/assets/ludek.png");
         textures[1]=new Texture("core/assets/ludek2.png");
+        /*
         textures[2]=new Texture("core/assets/ludek3.png");
         textures[3]=new Texture("core/assets/ludek4.png");
         textures[4]=new Texture("core/assets/ludek5.png");
@@ -71,6 +70,7 @@ public class Person {
         textures[8]=new Texture("core/assets/ludek9.png");
         textures[9]=new Texture("core/assets/ludek10.png");
         textures[10]=new Texture("core/assets/ludek.png");  //machanie będzie lepiej wyglądało ;)
+        */
         //textures[2]=new Texture("ludek3.png");
         //we can do it as spritesheet :/
 
