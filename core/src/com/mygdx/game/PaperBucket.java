@@ -11,7 +11,12 @@ public class PaperBucket extends Buckets{
 
 
     public PaperBucket(){
-        this.create();
+
+    }
+
+    public void PaperBucketMake()
+    {
+
         this.render();
     }
 

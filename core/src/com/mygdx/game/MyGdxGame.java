@@ -17,28 +17,37 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture backGroundImage;
 	ConveyorBelt cnb;
 	com.badlogic.gdx.utils.Queue queue;
+	GlassBucket glass = new GlassBucket();
+	PlasticBucket plastic = new PlasticBucket();
+	PaperBucket paper = new PaperBucket();
 
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
+		backGroundImage = new Texture("core/assets/bg.jpg");
 		queue = new com.badlogic.gdx.utils.Queue();
 		cnb = new ConveyorBelt();
+		plastic.create();
+		glass.create();
+		paper.create();
+
 	}
 	@Override
 	public void render () {
 		batch.begin();
-		backGroundImage = new Texture("core/assets/bg.jpg");
+
 		batch.draw(backGroundImage, 0, 0);
 		conveyor_belt.setPosition(0,300);
 		conveyor_belt.setSize(600,200);
 		conveyor_belt.draw(batch);
 		batch.end();
-		GlassBucket glass = new GlassBucket();
-		PlasticBucket plastic = new PlasticBucket();
-		PaperBucket paper = new PaperBucket();
-		Buckets bucket = new Buckets() {
+		glass.GlassBucketMake();
+		paper.PaperBucketMake();
+		plastic.PlasticBucketMake();
+		Buckets bucket = new Buckets()
+		{
 			@Override
 			public boolean collision(BaseGarbage.garbageType type){
 
@@ -93,7 +102,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		};
 		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 			bucket.checkIfValid(cnb);
-			cnb.setup();
+			cnb.Setup();
 			try {
 				TimeUnit.MILLISECONDS.sleep(200);
 			} catch (InterruptedException e) {

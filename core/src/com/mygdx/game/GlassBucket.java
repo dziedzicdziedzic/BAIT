@@ -10,7 +10,11 @@ public class GlassBucket extends Buckets {
     Texture bucketImg;
 
     public GlassBucket(){
-        this.create();
+
+    }
+
+    public void GlassBucketMake()
+    {
         this.render();
     }
 
@@ -31,7 +35,7 @@ public class GlassBucket extends Buckets {
     public void dispose () {
         batch.dispose();
         bucketImg.dispose();
-    }
+}
 
     @Override
     public boolean collision(BaseGarbage.garbageType type) {
