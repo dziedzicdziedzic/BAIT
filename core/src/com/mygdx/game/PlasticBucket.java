@@ -12,13 +12,13 @@ public class PlasticBucket extends Buckets implements ApplicationListener{
     @Override
     public void create(){
         batch = new SpriteBatch();
-        //bucketImg = new Texture("path");
+        bucketImg = new Texture("core/assets/badlogic.jpg");
     }
 
     @Override
     public void render (){
         batch.begin();
-        batch.draw(bucketImg, 0, 0);
+        batch.draw(bucketImg, 60, 240);
         batch.end();
     }
 
@@ -29,5 +29,11 @@ public class PlasticBucket extends Buckets implements ApplicationListener{
             }
         }
         return false;
+    }
+
+    @Override
+    public void dispose () {
+        batch.dispose();
+        bucketImg.dispose();
     }
 }
