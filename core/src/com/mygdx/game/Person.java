@@ -8,12 +8,13 @@ public class Person {
 
     private SpriteBatch spriteBatch;
     //private Sprite sprite;
-    private BitmapFont;
+    private BitmapFont font;
     private Texture texture;
     private float timer;
     private int counter;
     private boolean ifhappy;
-    private Texture textures[]=new Texture[2];
+    private double score;
+    private Texture textures[]=new Texture[3];
     public void setIfhappy(boolean ifHappy)
     {
         ifhappy=ifHappy;
@@ -25,11 +26,11 @@ public class Person {
         }
         else {
 
-            if (counter > 1) {
+            if (counter > 2) {
                 ifhappy = false;
                 counter = 0;
             } else {
-                ifhappy = true;
+                //ifhappy = true;
             }
             timer += Gdx.graphics.getDeltaTime();
 
@@ -46,22 +47,35 @@ public class Person {
 
 
       spriteBatch.begin();
-      spriteBatch.draw(this.texture,0,200);
+      spriteBatch.draw(this.texture,600,100);
+      font.draw(spriteBatch,"Score:"+score,700,600);
 
       spriteBatch.end();
       Happy();
     }
-
+    public void addscore(){
+        score+=100;
+    }
+    public void subscore(){
+        score-=500;
+        if(score<0){
+            score=0;
+        }
+    }
     public void initialization(){
         counter=0;
+        score=0;
+        font=new BitmapFont();
+        font.setColor(0,0,0,1);
+
         texture = new Texture("core/assets/ludek.png");   ///początkowa
         ifhappy=false;
         spriteBatch=new SpriteBatch();
 
         textures[0]=new Texture("core/assets/ludek.png");
         textures[1]=new Texture("core/assets/ludek2.png");
+        textures[2]=new Texture("core/assets/ludek.png");
         /*
-        textures[2]=new Texture("core/assets/ludek3.png");
         textures[3]=new Texture("core/assets/ludek4.png");
         textures[4]=new Texture("core/assets/ludek5.png");
         textures[5]=new Texture("core/assets/ludek6.png");
