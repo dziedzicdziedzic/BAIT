@@ -9,6 +9,7 @@ public class PaperBucket extends Buckets{
     SpriteBatch batch;
     Texture bucketImg;
 
+
     public PaperBucket(){
         this.create();
         this.render();
@@ -27,19 +28,20 @@ public class PaperBucket extends Buckets{
         batch.end();
     }
 
-    public boolean collision(){
-        if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
-                System.out.println("kolizja-papier");
-                return true;
-            }
-        }
-        return false;
-    }
 
     @Override
     public void dispose () {
         batch.dispose();
         bucketImg.dispose();
+    }
+
+    @Override
+    public boolean collision(BaseGarbage.garbageType type) {
+        return false;
+    }
+
+    @Override
+    public boolean checkIfValid(ConveyorBelt cnb) {
+        return false;
     }
 }
