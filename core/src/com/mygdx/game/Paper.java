@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
 
-public class Paper implements BaseGarbage{
+public class Paper extends Garbage{
 
     garbageType paperType = garbageType.PAPER;
     public Texture garbageTex;
@@ -15,7 +15,7 @@ public class Paper implements BaseGarbage{
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("core/assets/kulka.png");
+        garbageTex = new Texture("core/assets/papier.png");
         return garbageTex;
     }
 }

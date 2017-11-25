@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
 
-public class Plastic implements BaseGarbage {
+public class Plastic extends Garbage {
     garbageType PlasticType = garbageType.PLASTIC;
     public Texture garbageTex;
 
@@ -13,7 +13,7 @@ public class Plastic implements BaseGarbage {
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("core/assets/butelka.jpg");
+        garbageTex = new Texture("core/assets/plastik.png");
         return garbageTex;
     }
 
