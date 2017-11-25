@@ -55,6 +55,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		GlassBucket glass = new GlassBucket();
 		PlasticBucket plastic = new PlasticBucket();
 		PaperBucket paper = new PaperBucket();
+		
 		Buckets bucket = new Buckets() {
 			@Override
 			public boolean collision(){
