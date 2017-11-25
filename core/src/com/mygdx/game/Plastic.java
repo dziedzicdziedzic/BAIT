@@ -13,7 +13,7 @@ public class Plastic implements BaseGarbage {
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("image.png");
+        garbageTex = new Texture("core/assets/butelka.jpg");
         return garbageTex;
     }
 

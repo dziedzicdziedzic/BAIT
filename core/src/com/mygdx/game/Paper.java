@@ -15,7 +15,7 @@ public class Paper implements BaseGarbage{
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("image.png");
+        garbageTex = new Texture("core/assets/kulka.png");
         return garbageTex;
     }
 }

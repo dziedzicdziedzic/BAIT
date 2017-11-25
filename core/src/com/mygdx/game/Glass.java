@@ -14,7 +14,7 @@ public class Glass implements BaseGarbage {
 
     public Texture getGarbageTex ()
     {
-        garbageTex = new Texture("image.png");
+        garbageTex = new Texture("core/assets/szkło.jpg");
         return garbageTex;
     }
 
