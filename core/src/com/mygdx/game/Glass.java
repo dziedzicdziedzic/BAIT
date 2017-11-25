@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
 
-public class Glass implements BaseGarbage {
+public class Glass extends Garbage {
 
     garbageType glassType = garbageType.GLASS;
     public Texture garbageTex;
