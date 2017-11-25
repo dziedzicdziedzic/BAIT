@@ -12,14 +12,16 @@ public class ConveyorBelt {
         return garbageQueue.removeFirst().returnType();
     }
 
+    public LinkedList<Garbage> getGarbageQueue() {
+        return garbageQueue;
+    }
+
     public ConveyorBelt() {
         garbageQueue = new LinkedList<Garbage>();
-        SetupBelt();
+        setupBelt();
     }
     
-    public void Setup()
-    {
-
+    public void setup() {
         int a = randomize.rand();
         if (a == 0) {
             garbageQueue.add(new Paper());
@@ -30,14 +32,13 @@ public class ConveyorBelt {
         else if(a == 2){
             garbageQueue.add(new Glass());
         }
+        System.out.println(garbageQueue.size());
 
     }
 
-    public void SetupBelt()
-    {
-        for(int i=0; i<5; i++)
-        {
-            Setup();
+    public void setupBelt() {
+        for(int i=0; i<5; i++) {
+            setup();
         }
     }
 
