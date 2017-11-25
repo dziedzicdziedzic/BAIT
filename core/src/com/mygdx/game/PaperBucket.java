@@ -22,35 +22,26 @@ public class PaperBucket extends Buckets{
     }
 
     @Override
-    public boolean checkIfValid(ConveyorBelt cnb) {
-        if(cnb.returnPopped().equals(BaseGarbage.garbageType.PAPER)){
-            if (this.collision()){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public void render (){
         batch.begin();
         batch.draw(bucketImg, 410, 0,160, 256);
         batch.end();
     }
 
-    public boolean collision(){
-        if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
-                System.out.println("kolizja-papier");
-                return true;
-            }
-        }
-        return false;
-    }
 
     @Override
     public void dispose () {
         batch.dispose();
         bucketImg.dispose();
+    }
+
+    @Override
+    public boolean collision(BaseGarbage.garbageType type) {
+        return false;
+    }
+
+    @Override
+    public boolean checkIfValid(ConveyorBelt cnb) {
+        return false;
     }
 }

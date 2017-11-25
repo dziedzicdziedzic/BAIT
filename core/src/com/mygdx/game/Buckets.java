@@ -6,6 +6,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public abstract class Buckets extends ApplicationAdapter implements CollisionHandler{
-    public abstract boolean collision();
+    public abstract boolean collision(BaseGarbage.garbageType type);
     public abstract boolean checkIfValid(ConveyorBelt cnb);
 }
