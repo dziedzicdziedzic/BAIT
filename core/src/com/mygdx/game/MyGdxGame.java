@@ -32,7 +32,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		plastic.create();
 		glass.create();
 		paper.create();
-
 	}
 	@Override
 	public void render () {
