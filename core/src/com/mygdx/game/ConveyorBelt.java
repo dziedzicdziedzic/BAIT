@@ -21,20 +21,16 @@ public class ConveyorBelt {
     {
 
         int a = randomize.rand();
-        if (a==0)
-        {
+        if (a == 0) {
             garbageQueue.add(new Paper());
         }
-        else
-        {
-            if(a==1) {
-                garbageQueue.add(new Glass());
-            }
-            else
-            {
-                garbageQueue.add(new Plastic());
-            }
+        else if(a == 1){
+            garbageQueue.add(new Plastic());
         }
+        else if(a == 2){
+            garbageQueue.add(new Glass());
+        }
+
     }
 
     public void SetupBelt()
