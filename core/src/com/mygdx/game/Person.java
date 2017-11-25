@@ -39,6 +39,7 @@ public class Person {
       texture = new Texture("ludek.png");
       Happy();
       if(ifhappy==1){
+
       }
 
 
