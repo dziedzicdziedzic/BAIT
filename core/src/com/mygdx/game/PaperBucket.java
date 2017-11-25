@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class PaperBucket extends Buckets implements ApplicationListener{
+public class PaperBucket extends Buckets{
     SpriteBatch batch;
     Texture bucketImg;
 
@@ -17,19 +17,19 @@ public class PaperBucket extends Buckets implements ApplicationListener{
     @Override
     public void create(){
         batch = new SpriteBatch();
-        bucketImg = new Texture("core/assets/badlogic.jpg");
+        bucketImg = new Texture("core/assets/paper.png");
     }
 
     @Override
     public void render (){
         batch.begin();
-        batch.draw(bucketImg, 410, 0,160, 160);
+        batch.draw(bucketImg, 410, 0,160, 256);
         batch.end();
     }
 
     public boolean collision(){
         if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 480 && Gdx.input.getY() <= 600)){
+            if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
                 System.out.println("kolizja-papier");
                 return true;
             }

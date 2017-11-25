@@ -17,19 +17,19 @@ public class GlassBucket extends Buckets {
     @Override
     public void create(){
         batch = new SpriteBatch();
-        bucketImg = new Texture("core/assets/badlogic.jpg");
+        bucketImg = new Texture("core/assets/glass.png");
     }
 
     @Override
     public void render (){
         batch.begin();
-        batch.draw(bucketImg, 30, 0,160,160);
+        batch.draw(bucketImg, 30, 0,160,256);
         batch.end();
     }
 
     public boolean collision(){
         if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 480 && Gdx.input.getY() <= 600)){
+            if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
                 System.out.println("kolizja-szkło");
                 return true;
             }

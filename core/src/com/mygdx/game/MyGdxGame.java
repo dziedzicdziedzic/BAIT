@@ -33,13 +33,18 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void render () {
 		batch.begin();
-
 		backGroundImage = new Texture("core/assets/bg.jpg");
 		batch.draw(backGroundImage, 0, 0);
 		conveyor_belt.setPosition(0,200);
 		conveyor_belt.setSize(630,100);
 		conveyor_belt.draw(batch);
 		batch.end();
+		GlassBucket glass = new GlassBucket();
+		PlasticBucket plastic = new PlasticBucket();
+		PaperBucket paper = new PaperBucket();
+		glass.collision();
+		plastic.collision();
+		paper.collision();
 	}
 
 	@Override
