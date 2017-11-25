@@ -26,8 +26,7 @@ public class Person {
         if(ifhappy==false){
         }
         else {
-            System.out.println(timer);
-            //System.out.println(counter);
+
             if (counter > 10) {
                 ifhappy = false;
                 counter = 0;
@@ -35,7 +34,7 @@ public class Person {
                 ifhappy = true;
             }
             timer += Gdx.graphics.getDeltaTime();
-            //System.out.println(timer);
+
             if (timer >= 0.2) {
                 timer = 0;
                 this.texture = textures[counter];
@@ -50,7 +49,7 @@ public class Person {
 
       spriteBatch.begin();
       spriteBatch.draw(this.texture,0,200);
-      System.out.println("super");
+
       spriteBatch.end();
       Happy();
     }
