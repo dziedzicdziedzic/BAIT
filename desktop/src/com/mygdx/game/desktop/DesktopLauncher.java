@@ -10,6 +10,9 @@ public class DesktopLauncher {
 		config.title = "Fajny projekt hehe";
 		config.width = 800;
 		config.height = 600;
+		config.resizable = false;
+
+
 		new LwjglApplication(new MyGdxGame(), config);
 	}
 }
