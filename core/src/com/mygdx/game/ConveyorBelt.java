@@ -18,11 +18,10 @@ public class ConveyorBelt {
 
     public ConveyorBelt() {
         garbageQueue = new LinkedList<Garbage>();
-        SetupBelt();
+        setupBelt();
     }
     
-    public void Setup()
-    {
+    public void setup() {
         int a = randomize.rand();
         if (a == 0) {
             garbageQueue.add(new Paper());
@@ -37,11 +36,9 @@ public class ConveyorBelt {
 
     }
 
-    public void SetupBelt()
-    {
-        for(int i=0; i<5; i++)
-        {
-            Setup();
+    public void setupBelt() {
+        for(int i=0; i<5; i++) {
+            setup();
         }
     }
 

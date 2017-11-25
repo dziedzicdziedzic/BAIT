@@ -3,17 +3,11 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 
-import java.util.LinkedList;
-import java.util.Queue;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -22,8 +16,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	Sprite conveyor_belt;
 	Texture backGroundImage;
 	ConveyorBelt cnb;
-
-	ShapeRenderer shapeRenderer;
 	com.badlogic.gdx.utils.Queue queue;
 
 
@@ -34,16 +26,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		queue = new com.badlogic.gdx.utils.Queue();
 		cnb = new ConveyorBelt();
 	}
-
 	@Override
 	public void render () {
-		batch.begin();
-		backGroundImage = new Texture("core/assets/bg.jpg");
-		batch.draw(backGroundImage, 0, 0);
-		conveyor_belt.setPosition(0,300);
-		conveyor_belt.setSize(600,200);
-		conveyor_belt.draw(batch);
-		batch.end();
+
 		GlassBucket glass = new GlassBucket();
 		PlasticBucket plastic = new PlasticBucket();
 		PaperBucket paper = new PaperBucket();
@@ -102,13 +87,20 @@ public class MyGdxGame extends ApplicationAdapter {
 		};
 		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 			bucket.checkIfValid(cnb);
-			cnb.Setup();
+			cnb.setup();
 			try {
 				TimeUnit.MILLISECONDS.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+		batch.begin();
+		backGroundImage = new Texture("core/assets/bg.jpg");
+		batch.draw(backGroundImage, 0, 0);
+		conveyor_belt.setPosition(0,300);
+		conveyor_belt.setSize(600,200);
+		conveyor_belt.draw(batch);
+		batch.end();
 	}
 
 	@Override
