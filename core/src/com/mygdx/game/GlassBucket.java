@@ -9,10 +9,6 @@ public class GlassBucket extends Buckets {
     SpriteBatch batch;
     Texture bucketImg;
 
-    public GlassBucket(){
-
-    }
-
 
     @Override
     public void create(){
