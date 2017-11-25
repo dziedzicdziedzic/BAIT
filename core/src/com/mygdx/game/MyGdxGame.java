@@ -20,6 +20,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	GlassBucket glass = new GlassBucket();
 	PlasticBucket plastic = new PlasticBucket();
 	PaperBucket paper = new PaperBucket();
+	Person person=new Person();
 
 
 	@Override
@@ -32,11 +33,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		plastic.create();
 		glass.create();
 		paper.create();
+		person.initialization();
 	}
 	@Override
 	public void render () {
 		batch.begin();
-
 		batch.draw(backGroundImage, 0, 0);
 		conveyor_belt.setPosition(0,300);
 		conveyor_belt.setSize(600,200);
@@ -45,6 +46,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		glass.GlassBucketMake();
 		paper.PaperBucketMake();
 		plastic.PlasticBucketMake();
+		person.render();
 		Buckets bucket = new Buckets()
 		{
 			@Override
@@ -100,7 +102,14 @@ public class MyGdxGame extends ApplicationAdapter {
 			}
 		};
 		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
-			bucket.checkIfValid(cnb);
+			if(bucket.checkIfValid(cnb)){
+				person.addscore();
+				person.setIfhappy(true);
+			}
+			else
+			{
+				person.subscore();
+			}
 			cnb.Setup();
 			try {
 				TimeUnit.MILLISECONDS.sleep(200);
