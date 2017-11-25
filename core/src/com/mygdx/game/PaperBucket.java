@@ -14,12 +14,6 @@ public class PaperBucket extends Buckets{
 
     }
 
-    public void PaperBucketMake()
-    {
-
-        this.render();
-    }
-
     @Override
     public void create(){
         batch = new SpriteBatch();

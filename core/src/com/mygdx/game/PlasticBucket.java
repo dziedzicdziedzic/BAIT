@@ -13,10 +13,7 @@ public class PlasticBucket extends Buckets{
 
     }
 
-    public void PlasticBucketMake()
-    {
-        this.render();
-    }
+
 
     @Override
     public void create(){

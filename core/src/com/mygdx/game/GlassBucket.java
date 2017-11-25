@@ -13,10 +13,6 @@ public class GlassBucket extends Buckets {
 
     }
 
-    public void GlassBucketMake()
-    {
-        this.render();
-    }
 
     @Override
     public void create(){
