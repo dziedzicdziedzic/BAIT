@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class GlassBucket extends Buckets implements ApplicationListener{
+public class GlassBucket extends Buckets {
     SpriteBatch batch;
     Texture bucketImg;
 
@@ -23,13 +23,14 @@ public class GlassBucket extends Buckets implements ApplicationListener{
     @Override
     public void render (){
         batch.begin();
-        batch.draw(bucketImg, 0, 240);
+        batch.draw(bucketImg, 30, 0,160,160);
         batch.end();
     }
 
     public boolean collision(){
         if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 0 && Gdx.input.getX() <= 40) && (Gdx.input.getY() >= 280 && Gdx.input.getY() <= 240)){
+            if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 480 && Gdx.input.getY() <= 600)){
+                System.out.println("kolizja-szkło");
                 return true;
             }
         }

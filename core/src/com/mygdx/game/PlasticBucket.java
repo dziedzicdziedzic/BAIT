@@ -23,13 +23,14 @@ public class PlasticBucket extends Buckets implements ApplicationListener{
     @Override
     public void render (){
         batch.begin();
-        batch.draw(bucketImg, 60, 240);
+        batch.draw(bucketImg, 220, 0,160,160);
         batch.end();
     }
 
     public boolean collision(){
         if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 60 && Gdx.input.getX() <= 100) && (Gdx.input.getY() >= 280 && Gdx.input.getY() <= 240)){
+            if((Gdx.input.getX() >= 220 && Gdx.input.getX() <= 380) && (Gdx.input.getY() >= 480 && Gdx.input.getY() <= 600)){
+                System.out.println("kolizja-plastik");
                 return true;
             }
         }

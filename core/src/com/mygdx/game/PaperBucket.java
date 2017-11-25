@@ -23,13 +23,14 @@ public class PaperBucket extends Buckets implements ApplicationListener{
     @Override
     public void render (){
         batch.begin();
-        batch.draw(bucketImg, 120, 240);
+        batch.draw(bucketImg, 410, 0,160, 160);
         batch.end();
     }
 
     public boolean collision(){
         if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-            if((Gdx.input.getX() >= 120 && Gdx.input.getX() <= 160) && (Gdx.input.getY() >= 280 && Gdx.input.getY() <= 240)){
+            if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 480 && Gdx.input.getY() <= 600)){
+                System.out.println("kolizja-papier");
                 return true;
             }
         }
