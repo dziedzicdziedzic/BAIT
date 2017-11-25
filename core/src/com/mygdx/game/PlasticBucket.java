@@ -9,6 +9,11 @@ public class PlasticBucket extends Buckets implements ApplicationListener{
     SpriteBatch batch;
     Texture bucketImg;
 
+    public PlasticBucket(){
+        this.create();
+        this.render();
+    }
+
     @Override
     public void create(){
         batch = new SpriteBatch();

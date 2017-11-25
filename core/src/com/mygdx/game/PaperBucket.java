@@ -9,6 +9,11 @@ public class PaperBucket extends Buckets implements ApplicationListener{
     SpriteBatch batch;
     Texture bucketImg;
 
+    public PaperBucket(){
+        this.create();
+        this.render();
+    }
+
     @Override
     public void create(){
         batch = new SpriteBatch();
