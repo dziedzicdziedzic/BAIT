@@ -10,16 +10,20 @@ import com.badlogic.gdx.graphics.Texture;
 public class Person {
 
     private SpriteBatch spriteBatch;
+    private Sprite sprite;
     private Texture texture;
     private float timer;
     private int counter;
     private boolean ifhappy;
-    private Texture textures[]=new Texture[10];
-
+    private Texture textures[]=new Texture[11];
+    public void setIfhappy(boolean ifHappy)
+    {
+        ifHappy=ifhappy;
+    }
 
     public void Happy(){
         if(!ifhappy)return;
-        if(counter>10){
+        if(counter>11){
             ifhappy=false;
             counter=0;
         }
@@ -29,36 +33,39 @@ public class Person {
         timer+=Gdx.graphics.getDeltaTime();
         if(timer>=0.2){
             timer=0;
+            texture=textures[counter];
             counter++;
-
         }
         return;
     }
 
-    public void render(int ifhappy){
+    public void render(){
 
-      texture = new Texture("ludek.png");
+
+      spriteBatch.begin();
+      //sprite=new Sprite(texture);
+      spriteBatch.draw(texture,500,500);
+      spriteBatch.end();
       Happy();
-      if(ifhappy==1){
-
-      }
-
-
-      if(ifhappy==1)return;
-      else timer=0;
     }
 
     public void initialization(){
-        textures[0]=new Texture("ludek.png");
-        textures[1]=new Texture("ludek2.png");
-        textures[2]=new Texture("ludek3.png");
-        textures[3]=new Texture("ludek4.png");
-        textures[4]=new Texture("ludek5.png");
-        textures[5]=new Texture("ludek6.png");
-        textures[6]=new Texture("ludek7.png");
-        textures[7]=new Texture("ludek8.png");
-        textures[8]=new Texture("ludek9.png");
-        textures[9]=new Texture("ludek10.png");
+        counter=0;
+        texture = new Texture("core/assets/ludek.png");   ///początkowa
+        ifhappy=false;
+        spriteBatch=new SpriteBatch();
+
+        textures[0]=new Texture("core/assets/ludek.png");
+        textures[1]=new Texture("core/assets/ludek2.png");
+        textures[2]=new Texture("core/assets/ludek3.png");
+        textures[3]=new Texture("core/assets/ludek4.png");
+        textures[4]=new Texture("core/assets/ludek5.png");
+        textures[5]=new Texture("core/assets/ludek6.png");
+        textures[6]=new Texture("core/assets/ludek7.png");
+        textures[7]=new Texture("core/assets/ludek8.png");
+        textures[8]=new Texture("core/assets/ludek9.png");
+        textures[9]=new Texture("core/assets/ludek10.png");
+        textures[10]=new Texture("core/assets/ludek.png");  //machanie będzie lepiej wyglądało ;)
         //textures[2]=new Texture("ludek3.png");
         //we can do it as spritesheet :/
 
