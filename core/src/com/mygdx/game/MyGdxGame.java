@@ -36,8 +36,8 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		backGroundImage = new Texture("core/assets/bg.jpg");
 		batch.draw(backGroundImage, 0, 0);
-
-		conveyor_belt.setSize(420,100);
+		conveyor_belt.setPosition(0,200);
+		conveyor_belt.setSize(630,100);
 		conveyor_belt.draw(batch);
 		batch.end();
 	}
