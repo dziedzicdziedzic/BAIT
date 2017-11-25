@@ -30,6 +30,7 @@ public class Person {
         if(timer>=0.2){
             timer=0;
             counter++;
+
         }
         return;
     }
