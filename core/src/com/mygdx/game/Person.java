@@ -27,6 +27,13 @@ public class Person {
         //texture=new Texture("spacecraftanimation.png");
         currentFrame = new TextureRegion();
         playerAnimationTexture = new Texture("spacecraftanimation.png");
+
+        sprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+        playerAnimationTexture = new Texture("spacecraftanimation.png");
+        playerTextureRegion = createRegion(playerTextureRegion, playerAnimationTexture, 100, 200, 3, 10);
+        playerAnimation = new Animation(0.1f, playerTextureRegion);
+        currentFrame = new TextureRegion();
     }
     public void render(){
         stateTime += Gdx.graphics.getDeltaTime();
