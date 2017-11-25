@@ -32,15 +32,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
 		queue = new com.badlogic.gdx.utils.Queue();
-		LinkedList<Garbage> grb = new LinkedList<Garbage>();
-		grb.add(new Paper());
-		grb.add(new Paper());
-		grb.add(new Paper());
-		grb.add(new Paper());
-		grb.add(new Paper());
-		grb.add(new Paper());
-		cnb = new ConveyorBelt(grb);
-
+		cnb = new ConveyorBelt();
 	}
 
 	@Override
@@ -94,11 +86,8 @@ public class MyGdxGame extends ApplicationAdapter {
 			}
 		};
 		bucket.checkIfValid(cnb);
-		try {
-			TimeUnit.SECONDS.sleep(5);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		cnb.Setup();
+
 	}
 
 	@Override

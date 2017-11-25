@@ -6,13 +6,17 @@ public class ConveyorBelt {
 
     Randomize randomize = new Randomize();
 
-    public ConveyorBelt() {
-        garbageQueue = new LinkedList<Garbage>();
+    public BaseGarbage.garbageType returnPopped(){
+        if (garbageQueue.isEmpty())
+            System.out.println("empty");
+        return garbageQueue.removeFirst().returnType();
     }
 
-    enum Type {
-        PLASTIC,GLASS,PAPER
+    public ConveyorBelt() {
+        garbageQueue = new LinkedList<Garbage>();
+        SetupBelt();
     }
+    
     public void Setup()
     {
 
@@ -35,18 +39,10 @@ public class ConveyorBelt {
 
     public void SetupBelt()
     {
-        for(int i=0; i<4; i++)
+        for(int i=0; i<5; i++)
         {
             Setup();
         }
     }
 
-    public Type Shift()
-    {
-        Garbage element = garbageQueue.poll();
-        Setup();
-        if (element.returnType() == BaseGarbage.garbageType.PLASTIC) return Type.PLASTIC;
-        if (element.returnType() == BaseGarbage.garbageType.GLASS) return Type.GLASS;
-        else return Type.PAPER;
-    }
 }
