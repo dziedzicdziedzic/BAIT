@@ -17,6 +17,7 @@ import java.util.Queue;
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Sprite conveyor_belt;
+	Texture backGroundImage;
 
 	ShapeRenderer shapeRenderer;
 	com.badlogic.gdx.utils.Queue queue;
@@ -25,13 +26,17 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		conveyor_belt = new Sprite(new Texture("C:\\Users\\Dziedzic\\Downloads\\test\\core\\assets\\conveyor.png"));
+		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
 		queue = new com.badlogic.gdx.utils.Queue();
 	}
 
 	@Override
 	public void render () {
 		batch.begin();
+
+		backGroundImage = new Texture("core/assets/bg.jpg");
+		batch.draw(backGroundImage, 0, 0);
+
 		conveyor_belt.setSize(420,100);
 		conveyor_belt.draw(batch);
 		batch.end();
