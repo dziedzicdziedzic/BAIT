@@ -8,20 +8,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ConveyorBelt {
-    public ConveyorBelt(com.badlogic.gdx.utils.Queue<BaseGarbage> garbageQueue, LinkedList<Sprite> belt) {
+    private Queue<BaseGarbage> garbageQueue;
+
+    public ConveyorBelt(Queue<BaseGarbage> garbageQueue) {
         this.garbageQueue = garbageQueue;
-        this.belt = belt;
     }
-
-    public ConveyorBelt() {
-        belt=new LinkedList<Sprite>();
-    }
-
-    private com.badlogic.gdx.utils.Queue<BaseGarbage> garbageQueue;
-    LinkedList<Sprite> belt;
-
-
-    public void setGarbageQueue(com.badlogic.gdx.utils.Queue<BaseGarbage>  garbageQueue) {
+    public void setGarbageQueue(Queue<BaseGarbage>  garbageQueue) {
         this.garbageQueue = garbageQueue;
+    }
+    public BaseGarbage returnPopped(){
+        return garbageQueue.remove();
     }
 }
