@@ -12,6 +12,10 @@ public class ConveyorBelt {
         return garbageQueue.removeFirst().returnType();
     }
 
+    public LinkedList<Garbage> getGarbageQueue() {
+        return garbageQueue;
+    }
+
     public ConveyorBelt() {
         garbageQueue = new LinkedList<Garbage>();
         SetupBelt();
@@ -19,7 +23,6 @@ public class ConveyorBelt {
     
     public void Setup()
     {
-
         int a = randomize.rand();
         if (a == 0) {
             garbageQueue.add(new Paper());
