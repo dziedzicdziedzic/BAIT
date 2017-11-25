@@ -1,5 +1,5 @@
 package com.mygdx.game;
-import java.lang.Object;
+//import java.lang.Object;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
@@ -14,24 +14,27 @@ public class Person {
     private Sprite sprite;
     private SpriteBatch spriteBatch;
     private Texture texture;
-    private Animation playerAnimation;
+    //private Animation playerAnimation;
     private TextureRegion[] playerTextureRegion;
     private Texture playerAnimationTexture;
     private TextureRegion currentFrame;
     float stateTime = 0;
+    Animation<TextureRegion> playerAnimation;
 
 
 
     public void load(){
-        texture=new Texture("spacecraftanimation.png");
+        //texture=new Texture("spacecraftanimation.png");
+        currentFrame = new TextureRegion();
+        playerAnimationTexture = new Texture("spacecraftanimation.png");
     }
     public void render(){
         stateTime += Gdx.graphics.getDeltaTime();
-        currentFrame =  playerAnimation.getKeyFrame(stateTime, true);
+        currentFrame = playerAnimation.getKeyFrame(stateTime, true);
 
         spriteBatch.begin();
         sprite.draw(spriteBatch);
-        spriteBatch.draw(currentFrame,30,30,100f,200f);
+        spriteBatch.draw(currentFrame,30,30);
         spriteBatch.end();
     }
     //x=100
