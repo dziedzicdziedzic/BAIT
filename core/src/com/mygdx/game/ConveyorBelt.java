@@ -16,7 +16,11 @@ public class ConveyorBelt {
         garbageQueue = new LinkedList<Garbage>();
         SetupBelt();
     }
-    
+
+    public LinkedList<Garbage> getGarbageQueue() {
+        return garbageQueue;
+    }
+
     public void Setup()
     {
 
