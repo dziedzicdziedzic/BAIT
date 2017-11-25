@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 public class Person {
 
     private SpriteBatch spriteBatch;
-    private Sprite sprite;
+    //private Sprite sprite;
     private Texture texture;
     private float timer;
     private int counter;
@@ -18,33 +18,39 @@ public class Person {
     private Texture textures[]=new Texture[11];
     public void setIfhappy(boolean ifHappy)
     {
-        ifHappy=ifhappy;
+        ifhappy=ifHappy;
     }
 
     public void Happy(){
-        if(!ifhappy)return;
-        if(counter>11){
-            ifhappy=false;
-            counter=0;
+
+        if(ifhappy==false){
         }
         else {
-            ifhappy=true;
+            System.out.println(timer);
+            //System.out.println(counter);
+            if (counter > 10) {
+                ifhappy = false;
+                counter = 0;
+            } else {
+                ifhappy = true;
+            }
+            timer += Gdx.graphics.getDeltaTime();
+            //System.out.println(timer);
+            if (timer >= 0.2) {
+                timer = 0;
+                this.texture = textures[counter];
+                counter++;
+
+            }
         }
-        timer+=Gdx.graphics.getDeltaTime();
-        if(timer>=0.2){
-            timer=0;
-            texture=textures[counter];
-            counter++;
-        }
-        return;
     }
 
     public void render(){
 
 
       spriteBatch.begin();
-      //sprite=new Sprite(texture);
-      spriteBatch.draw(texture,500,500);
+      spriteBatch.draw(this.texture,0,200);
+      System.out.println("super");
       spriteBatch.end();
       Happy();
     }
