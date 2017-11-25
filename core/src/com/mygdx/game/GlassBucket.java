@@ -15,6 +15,11 @@ public class GlassBucket extends Buckets {
     }
 
     @Override
+    public boolean checkIfValid() {
+        return true;
+    }
+
+    @Override
     public void create(){
         batch = new SpriteBatch();
         bucketImg = new Texture("core/assets/glass.png");

@@ -21,6 +21,11 @@ public class PaperBucket extends Buckets{
     }
 
     @Override
+    public boolean checkIfValid(ConveyorBelt cnb) {
+        return false;
+    }
+
+    @Override
     public void render (){
         batch.begin();
         batch.draw(bucketImg, 410, 0,160, 256);

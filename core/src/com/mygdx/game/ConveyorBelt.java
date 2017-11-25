@@ -1,10 +1,6 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import java.util.LinkedList;
 import java.util.Queue;
 
 public class ConveyorBelt {
