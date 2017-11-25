@@ -6,7 +6,7 @@ public class Randomize {
     public int rand()
     {
         Random generator = new Random();
-        int a = generator.nextInt(2);
+        int a = generator.nextInt(3);
         return a;
     }
 }

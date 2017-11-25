@@ -56,20 +56,26 @@ public class MyGdxGame extends ApplicationAdapter {
 					if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-szkło");
 						if(type.equals(BaseGarbage.garbageType.GLASS)){
+						    System.out.println("dobrze");
 						    return true;
                         }
+                        System.out.println("zle");
 						return false;
 					} else if ((Gdx.input.getX() >= 220 && Gdx.input.getX() <= 380) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-plastik");
                         if(type.equals(BaseGarbage.garbageType.PLASTIC)){
+                            System.out.println("dobrze");
                             return true;
                         }
+                        System.out.println("zle");
 						return false;
 					} else if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-papier");
                         if(type.equals(BaseGarbage.garbageType.PAPER)){
+                            System.out.println("dobrze");
                             return true;
                         }
+                        System.out.println("zle");
 						return false;
 					}
 				}
