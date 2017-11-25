@@ -101,9 +101,15 @@ public class MyGdxGame extends ApplicationAdapter {
 				return false;
 			}
 		};
-		bucket.checkIfValid(cnb);
-		cnb.Setup();
-
+		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+			bucket.checkIfValid(cnb);
+			cnb.Setup();
+			try {
+				TimeUnit.MILLISECONDS.sleep(200);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override

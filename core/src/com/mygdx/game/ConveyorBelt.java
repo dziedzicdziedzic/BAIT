@@ -30,6 +30,7 @@ public class ConveyorBelt {
         else if(a == 2){
             garbageQueue.add(new Glass());
         }
+        System.out.println(garbageQueue.size());
 
     }
 
