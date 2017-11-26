@@ -27,12 +27,14 @@ public class MyGdxGame extends ApplicationAdapter {
     Sound paperSound;
     Sound plasticSound;
     Sound glassSound;
+    Sound bgSound;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
 		backGroundImage = new Texture("core/assets/bg.jpg");
+        bgSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/326639_monkeyman535_happy-music.ogg"));
         paperSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/82378_gynation_paper-flip-2.ogg"));
         plasticSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/405702_apinasaundi_found-plastic-bottle-1.ogg"));
         glassSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/338692_natemarler_glass-break-small.ogg"));
@@ -44,6 +46,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		lrender.create();
 		lrender.setCnb(cnb);
 		person.initialization();
+		bgSound.loop(1.0f);
 	}
 	@Override
 	public void render () {
