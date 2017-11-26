@@ -60,6 +60,7 @@ public class Person {
         score-=5;
         if(score<0){
             score=0;
+            
         }
     }
     public void initialization(){
