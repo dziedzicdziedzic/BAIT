@@ -27,6 +27,8 @@ public class MyGdxGame extends ApplicationAdapter {
     Sound plasticSound;
     Sound glassSound;
     Sound bgSound;
+	short alive =4;
+
 
 	@Override
 	public void create () {
@@ -120,8 +122,12 @@ public class MyGdxGame extends ApplicationAdapter {
 			}
 			else
 			{
-				person.subscore();
+				person.livesminus();
 			}
+			if(person.returnAlive()){
+				//render scena koniec
+			}
+
 			cnb.Setup();
 			try {
 				TimeUnit.MILLISECONDS.sleep(200);

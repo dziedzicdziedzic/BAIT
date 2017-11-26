@@ -10,11 +10,13 @@ public class Person {
     //private Sprite sprite;
     private BitmapFont font;
     private Texture texture;
+    private Texture texture1;
     private float timer;
     private int counter;
     private boolean ifhappy;
+    private boolean alive=true;
     private double score;
-    private Texture textures[]=new Texture[3];
+    private short lives=4;    private Texture textures[]=new Texture[7];
     public void setIfhappy(boolean ifHappy)
     {
         ifhappy=ifHappy;
@@ -50,18 +52,22 @@ public class Person {
       spriteBatch.draw(this.texture,600,100);
       font.draw(spriteBatch,"Score:"+score,700,600);
 
+
       spriteBatch.end();
       Happy();
     }
     public void addscore(){
         score+=100;
     }
-    public void subscore(){
-        score-=5;
-        if(score<0){
-            score=0;
-        }
+    public void livesminus()
+    {
+        lives--;
+        if (lives == 0) alive = false;
     }
+    public boolean returnAlive(){
+        return alive;
+    }
+
     public void initialization(){
         counter=0;
         score=0;
@@ -75,6 +81,12 @@ public class Person {
         textures[0]=new Texture("core/assets/ludek.png");
         textures[1]=new Texture("core/assets/ludek2.png");
         textures[2]=new Texture("core/assets/ludek.png");
+        textures[6]=new Texture("core/assets/serduszko.png");//
+        textures[5]=new Texture("core/assets/serduszko1mniej.png");//jakies grafiki żyć
+        textures[4]=new Texture("core/assets/serduszko2mniej.png");//
+        textures[3]=new Texture("core/assets/serduszko3mniej.png");//
+
+
         /*
         textures[3]=new Texture("core/assets/ludek4.png");
         textures[4]=new Texture("core/assets/ludek5.png");
