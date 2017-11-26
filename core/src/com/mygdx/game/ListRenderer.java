@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,6 +13,7 @@ public class ListRenderer extends ApplicationAdapter {
     Sprite glassSprite;
     Sprite plasticSprite;
     Sprite paperSprite;
+    Sound paperSound;
 
     public void setCnb(ConveyorBelt cnb) {
         this.cnb = cnb;
@@ -35,10 +37,8 @@ public class ListRenderer extends ApplicationAdapter {
     @Override
     public void render() {
         int offset= 0;
-
         for(Garbage s: cnb.getGarbageQueue()){
             BaseGarbage.garbageType garbageType = s.returnType();
-            String filepath;
             switch (garbageType){
                 case GLASS:
                     garbageSprite = glassSprite;

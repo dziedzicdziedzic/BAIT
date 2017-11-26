@@ -3,6 +3,8 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -22,13 +24,18 @@ public class MyGdxGame extends ApplicationAdapter {
 	PaperBucket paper = new PaperBucket();
 	Person person=new Person();
 	ListRenderer lrender = new ListRenderer();
-
+    Sound paperSound;
+    Sound plasticSound;
+    Sound glassSound;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
 		backGroundImage = new Texture("core/assets/bg.jpg");
+        Sound paperSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/82378_gynation_paper-flip-2.ogg"));
+        Sound plasticSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/405702_apinasaundi_found-plastic-bottle-1.ogg"));
+        Sound glassSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/338692_natemarler_glass-break-small.ogg"));
 		cnb = new ConveyorBelt();
 		lrender = new ListRenderer();
 		plastic.create();
@@ -60,7 +67,7 @@ public class MyGdxGame extends ApplicationAdapter {
 					if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-szkło");
 						if(type.equals(BaseGarbage.garbageType.GLASS)){
-						    System.out.println("dobrze");
+						    glassSound.play(1.0f);
 						    return true;
                         }
                         System.out.println("zle");
@@ -68,15 +75,14 @@ public class MyGdxGame extends ApplicationAdapter {
 					} else if ((Gdx.input.getX() >= 220 && Gdx.input.getX() <= 380) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-plastik");
                         if(type.equals(BaseGarbage.garbageType.PLASTIC)){
-                            System.out.println("dobrze");
+                            plasticSound.play(1.0f);
                             return true;
                         }
                         System.out.println("zle");
 						return false;
 					} else if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
-						System.out.println("kolizja-papier");
                         if(type.equals(BaseGarbage.garbageType.PAPER)){
-                            System.out.println("dobrze");
+                            paperSound.play(1.0f);
                             return true;
                         }
                         System.out.println("zle");
