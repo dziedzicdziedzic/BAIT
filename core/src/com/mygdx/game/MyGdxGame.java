@@ -21,7 +21,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	PlasticBucket plastic = new PlasticBucket();
 	PaperBucket paper = new PaperBucket();
 	Person person=new Person();
-	ListRenderer lrender;
+	ListRenderer lrender = new ListRenderer();
 
 
 	@Override
