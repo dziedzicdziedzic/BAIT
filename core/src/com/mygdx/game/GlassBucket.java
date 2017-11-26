@@ -9,14 +9,6 @@ public class GlassBucket extends Buckets {
     SpriteBatch batch;
     Texture bucketImg;
 
-    public GlassBucket(){
-
-    }
-
-    public void GlassBucketMake()
-    {
-        this.render();
-    }
 
     @Override
     public void create(){

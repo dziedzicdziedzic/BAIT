@@ -21,6 +21,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	PlasticBucket plastic = new PlasticBucket();
 	PaperBucket paper = new PaperBucket();
 	Person person=new Person();
+	ListRenderer lrender;
 
 
 	@Override
@@ -28,11 +29,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
 		backGroundImage = new Texture("core/assets/bg.jpg");
-		queue = new com.badlogic.gdx.utils.Queue();
 		cnb = new ConveyorBelt();
+		lrender = new ListRenderer();
 		plastic.create();
 		glass.create();
 		paper.create();
+		lrender.create();
+		lrender.setCnb(cnb);
 		person.initialization();
 	}
 	@Override
@@ -43,10 +46,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		conveyor_belt.setSize(600,200);
 		conveyor_belt.draw(batch);
 		batch.end();
-		glass.GlassBucketMake();
-		paper.PaperBucketMake();
-		plastic.PlasticBucketMake();
+		glass.render();
+		paper.render();
+		plastic.render();
 		person.render();
+		lrender.render();
 		Buckets bucket = new Buckets()
 		{
 			@Override
