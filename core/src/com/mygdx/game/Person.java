@@ -51,6 +51,7 @@ public class Person {
       spriteBatch.begin();
       spriteBatch.draw(this.texture,600,100);
       font.draw(spriteBatch,"Score:"+score,700,600);
+      spriteBatch.draw(textures[lives + 2],650,500);
 
 
       spriteBatch.end();

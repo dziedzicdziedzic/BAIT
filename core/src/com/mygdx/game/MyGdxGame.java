@@ -27,7 +27,6 @@ public class MyGdxGame extends ApplicationAdapter {
     Sound plasticSound;
     Sound glassSound;
     Sound bgSound;
-	short alive =4;
 
 
 	@Override
@@ -124,8 +123,8 @@ public class MyGdxGame extends ApplicationAdapter {
 			{
 				person.livesminus();
 			}
-			if(person.returnAlive()){
-				//render scena koniec
+			if(!person.returnAlive()){
+				dispose();
 			}
 
 			cnb.Setup();
