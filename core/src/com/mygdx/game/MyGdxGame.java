@@ -33,9 +33,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		conveyor_belt = new Sprite(new Texture("core/assets/conveyor.png"));
 		backGroundImage = new Texture("core/assets/bg.jpg");
-        Sound paperSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/82378_gynation_paper-flip-2.ogg"));
-        Sound plasticSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/405702_apinasaundi_found-plastic-bottle-1.ogg"));
-        Sound glassSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/338692_natemarler_glass-break-small.ogg"));
+        paperSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/82378_gynation_paper-flip-2.ogg"));
+        plasticSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/405702_apinasaundi_found-plastic-bottle-1.ogg"));
+        glassSound=Gdx.audio.newSound(Gdx.files.internal("core/assets/ogg/338692_natemarler_glass-break-small.ogg"));
 		cnb = new ConveyorBelt();
 		lrender = new ListRenderer();
 		plastic.create();
@@ -67,7 +67,7 @@ public class MyGdxGame extends ApplicationAdapter {
 					if((Gdx.input.getX() >= 30 && Gdx.input.getX() <= 190) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-szkło");
 						if(type.equals(BaseGarbage.garbageType.GLASS)){
-						    glassSound.play(1.0f);
+                            final long playGlass = glassSound.play(1.0f);
 						    return true;
                         }
                         System.out.println("zle");
@@ -75,14 +75,14 @@ public class MyGdxGame extends ApplicationAdapter {
 					} else if ((Gdx.input.getX() >= 220 && Gdx.input.getX() <= 380) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
 						System.out.println("kolizja-plastik");
                         if(type.equals(BaseGarbage.garbageType.PLASTIC)){
-                            plasticSound.play(1.0f);
+                            final long playPlastic = plasticSound.play(1.0f);
                             return true;
                         }
                         System.out.println("zle");
 						return false;
 					} else if((Gdx.input.getX() >= 410 && Gdx.input.getX() <= 570) && (Gdx.input.getY() >= 344 && Gdx.input.getY() <= 600)){
                         if(type.equals(BaseGarbage.garbageType.PAPER)){
-                            paperSound.play(1.0f);
+                            final long playPaper = paperSound.play(1.0f);
                             return true;
                         }
                         System.out.println("zle");
