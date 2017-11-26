@@ -132,5 +132,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
+		paperSound.dispose();
+		plasticSound.dispose();
+		glassSound.dispose();
 	}
 }
